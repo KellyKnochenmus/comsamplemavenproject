@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="KellyTest">
+    <test name="Test">
+        <classes>
+            <class name="Tests.HandlingJavaScriptAlertPopupWindow"/>
+            <class name="Tests.TestThatCallsExternalObjects"/>
+        </classes>
+    </test>
+</suite>
