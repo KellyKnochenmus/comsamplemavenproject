@@ -6,7 +6,7 @@ node('qa') {
     checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'c480aef3-a634-4247-91c1-39ebb7c589c4', url: 'https://github.com/KellyKnochenmus/comsamplemavenproject']]])
 
     stage 'Test'
-    sh 'scripts/jenkins-mvn-sr'
+    sh 'scripts/jenkinsfile'
   } catch (e) {
     currentBuild.result = "FAILURE"
     throw e
