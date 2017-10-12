@@ -1,0 +1,11 @@
+#!/bin/bash
+export JAVA_HOME="/usr/lib/jvm/java-8-oracle/"
+# if X virtual frame buffer is running in the background kill it, then start it back up
+[[ -n $(pgrep Xvfb) ]] && pkill Xvfb || true
+Xvfb :99 -screen 0 2560x1440x24 &
+export DISPLAY=:99
+mvn clean test -Dsurefire.suiteXmlFiles=testng.xml
+RC=$?
+pkill Xvfb
+pkill chrome
+exit $RC
